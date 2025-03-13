@@ -1,0 +1,33 @@
+# CDK-LDK Node Configuration
+
+# Bitcoin configuration
+[bitcoin]
+network = "regtest"  # Options: "bitcoin", "testnet", "signet", "regtest"
+rpc_host = "127.0.0.1"
+rpc_port = 18443
+rpc_user = "testuser"
+rpc_password = "testpass"
+
+# LDK node configuration
+[ldk]
+listen_host = "127.0.0.1"
+listen_port = 8090
+
+# gRPC server configuration
+[grpc]
+host = "127.0.0.1"
+port = 50051
+
+# LSP server configuration
+[lsp]
+listen_host = "127.0.0.1"
+listen_port = 3000
+min_channel_size_sat = 500000
+max_channel_size_sat = 2000000
+min_fee = 1000
+fee_ppk = 1000
+payment_url = ""
+accepted_mints = []  # List of accepted mint URLs
+
+# Data directory for storing databases and other persistent data
+data_dir = "~/.cashu_lsp"

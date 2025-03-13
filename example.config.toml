@@ -1,0 +1,40 @@
+# CDK-LDK Node Configuration Example
+# Copy this file to config.toml and modify as needed
+
+# Bitcoin configuration
+[bitcoin]
+# Bitcoin Core RPC connection details
+rpc_host = "127.0.0.1"
+rpc_port = 18443
+rpc_user = "testuser"
+rpc_password = "testpass"
+
+# LDK node configuration
+[ldk]
+# Address for the Lightning node to listen on
+listen_host = "127.0.0.1"
+listen_port = 8090
+
+# gRPC server configuration for management API
+[grpc]
+host = "127.0.0.1"
+port = 50051
+
+# LSP (Lightning Service Provider) server configuration
+[lsp]
+# HTTP API server address
+listen_host = "127.0.0.1"
+listen_port = 3000
+# Channel size limits in satoshis
+min_channel_size_sat = 500000
+max_channel_size_sat = 2000000
+# Fee configuration
+min_fee = 1000
+fee_ppk = 1000  # Parts per thousand
+# Payment URL for the LSP
+payment_url = "https://your-lsp-payment-url.com"
+# List of accepted Cashu mint URLs
+accepted_mints = [
+  "https://mint1.example.com",
+  "https://mint2.example.com"
+]

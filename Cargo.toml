@@ -1,0 +1,50 @@
+[package]
+name = "cashu-lsp"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "cdk_ldk_node"
+path = "src/lib.rs"
+
+[[bin]]
+name = "cdk-ldk-node"
+path = "src/bin/cdk-ldk-node.rs"
+
+[[bin]]
+name = "cdk-ldk-cli"
+path = "src/bin/cdk-ldk-cli.rs"
+
+[dependencies]
+ldk-node = { version = "0.4.3", features = ["uniffi"] }
+cdk = { git = "https://github.com/thesimplekid/cdk", branch = "main", features = ["wallet"] }
+cdk-redb = { git = "https://github.com/thesimplekid/cdk", branch = "main", features = ["wallet"] }
+serde_json = "1.0.139"
+serde = "1.0.218"
+async-trait = "0.1.86"
+futures = "0.3.31"
+anyhow = "1.0.96"
+tokio = { version = "1.43.0", features = ["full"] }
+clap = { version = "4.5.31", features = ["derive"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+tokio-util = "0.7.13"
+tokio-stream = "0.1.17"
+tonic = { version = "0.12", features = [
+    "channel",
+    "tls",
+    "tls-webpki-roots",
+] }
+prost = "0.13.0"
+axum = "0.8.1"
+home = "0.5.11"
+redb = "2.4.0"
+uuid = { version = "1", features = ["v4"] }
+config = { version = "0.15.11", features = ["toml"] }
+dirs = "5.0.0"
+tower-http = { version = "0.6.2", features = ["cors"] }
+bip39 = { version = "2.1.0", features = ["rand"] }
+
+[build-dependencies]
+tonic-build = "0.12"
+
